@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Movie;
+
 class MovieSeeder extends Seeder
 {
     /**
@@ -16,13 +18,13 @@ class MovieSeeder extends Seeder
         foreach($movie as $m){
             $movie = new Movie();
 
-            $movie->title = $m['titolo'];
-            $movie->description = $m['descrizione'];
-            $movie->image = $m['thumb'];
-            $movie->price = $m['prezzo'];
-            $movie->series = $m['serie'];
-            $movie->sale_date = $m['data'];
-            $movie->type = $m['tipo'];
+            $movie->title = $m['title'];
+            $movie->description = $m['description'];
+            $movie->thumb = $m['thumb'];
+            $movie->price = $m['price'];
+            $movie->series = $m['series'];
+            $movie->sale_date = $m['sale_date'];
+            $movie->type = $m['type'];
 
 
             $movie->save();
