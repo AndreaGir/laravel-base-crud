@@ -5,13 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    
+
+
+    <h1 class="titoloHome">
+        FILM
+    </h1>
+
+    <span>
+        <a href="/movies">
+            Lista film
+        </a>
+    </span>
+    <span>
+        <a href="/">
+            home
+        </a>
+    </span>
 
     
 
-    @include('index')
+    @yield('mainSection')
 
 
 </body>

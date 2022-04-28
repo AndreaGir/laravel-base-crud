@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::resource('Movies', 'MovieController');
+Route::resource('movies', 'MovieController');
+
+Route::get('/movies', "MovieController@index");
