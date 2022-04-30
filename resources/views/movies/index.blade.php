@@ -1,8 +1,14 @@
 @extends('app')
 
 @section('mainSection')
+<button>
+    <a href="/create">
+        aggiungi film
+    </a>
+    
+</button> 
 <table>
-    <thead>
+    <thead class="indici">
         <th>titolo</th>
         <th>descrizione</th>
         <th>serie</th>
@@ -10,26 +16,30 @@
         <th>prezo</th>
         <th>tipo</th>
     </thead>
-    <tbody>
+    <tbody >
 @foreach ($movies as $movie)
-        <tr>
-            <td>
+        <tr >
+            <td class="linee">
                 {{ $movie->title}}
             </td>
-            <td>
+            <td class="linee">
                 {{ $movie->description}}
             </td>
-            <td>
+            <td class="linee">
                 {{ $movie->series}}
             </td>
-            <td>
+            <td class="linee">
                 {{ $movie->sale_date}}
             </td>
-            <td>
+            <td class="linee">
                 {{ $movie->price}}
             </td>
-            <td>
+            <td class="linee">
                 {{ $movie->type}}
+            </td>
+            <td>
+                <button>modifica</button>
+                <button>cancella</button>
             </td>
         </tr>
 

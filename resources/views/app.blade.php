@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="common.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -14,21 +14,24 @@
         FILM
     </h1>
 
-    <span>
-        <a href="/movies">
-            Lista film
+    <button >
+        <a class="titolifilm" href="/movies" >
+            Lista dei film
         </a>
-    </span>
-    <span>
-        <a href="/">
+    </button>
+    <button>
+        <a class="titolifilm" href="/">
             home
         </a>
-    </span>
+    </button>
 
     
 
     @yield('mainSection')
 
+    @yield('mainCreate')
+
+    
 
 </body>
 </html>
