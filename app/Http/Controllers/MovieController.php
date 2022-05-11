@@ -48,12 +48,16 @@ class MovieController extends Controller
 
         $movie = new Movie();
 
-        $movie->title = $request->input('title');
+        /* $movie->title = $request->input('title');
         $movie->description = $request->input('description');
         $movie->series = $request->input('series');
         $movie->sale_date = $request->input('sale_date');
         $movie->price = $request->input('price');
-        $movie->type = $request->input('type');
+        $movie->type = $request->input('type'); */
+
+        $data = $request->all();
+        $movie->fill($data);
+        $movie->slug = Str::slug($data['title']);
         
         $movie->save();
 
