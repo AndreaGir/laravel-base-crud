@@ -19,6 +19,7 @@ class MovieSeeder extends Seeder
             $movie = new Movie();
 
             $movie->title = $m['title'];
+            $movie->slug = $m['title'];
             $movie->description = $m['description'];
             $movie->thumb = $m['thumb'];
             $movie->price = $m['price'];

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Str;
 use App\Movie;
 use Illuminate\Http\Request;
 

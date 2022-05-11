@@ -20,6 +20,3 @@ Route::get('/', function () {
 
 Route::resource('movies', 'MovieController');
 
-Route::get('/movies', "MovieController@index");
-
-Route::get('/create', "MovieController@create");

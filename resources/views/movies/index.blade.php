@@ -2,7 +2,7 @@
 
 @section('mainSection')
 <button>
-    <a href="/create">
+    <a href="{{ route("movies.create")}}">
         aggiungi film
     </a>
     

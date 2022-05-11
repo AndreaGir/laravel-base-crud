@@ -9,10 +9,10 @@
     </ul>
 @endif --}}
 
-<form action="{{ route('movies.store')}}" method="movie">
+<form action="{{ route('movies.store')}}" method="post">
     @csrf
 
-</form>
+
 
 <div class="input">
     <h2>Titolo</h2>
@@ -28,11 +28,12 @@
     <h2>Tipo</h2>
     <input type="text" placeholder="" name="type" value="{{ old('type')}}">
 
-    <a href="{{ route('movies.create')}}">
+    
         <button> Aggiungi film</button>
-    </a>
     
 </div>
+
+</form>
 
 
 
