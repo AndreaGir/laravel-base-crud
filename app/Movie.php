@@ -8,6 +8,7 @@ class Movie extends Model
 {
     protected $fillable = [
             'title',
+            'slug',
             'description',
             'series',
             'sale_date',

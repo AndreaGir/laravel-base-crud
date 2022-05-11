@@ -38,8 +38,15 @@
                 {{ $movie->type}}
             </td>
             <td>
-                <button>modifica</button>
-                <button>cancella</button>
+                <a href="{{ route('movies.edit', $movie)}}">
+                    <button>modifica</button>
+                </a>
+                <form action="{{ route('movies.destroy', $movie)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit">elimina</button>
+                </form>
             </td>
         </tr>
 

@@ -83,7 +83,8 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        
+        return view('movies.edit', compact('movie'));
     }
 
     /**
@@ -95,7 +96,23 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:100',
+            'description' => 'required|max:100',
+            'series' => 'required|max:100',
+            'sale_date' => 'required|max:100',
+            'price' => 'required|max:100',
+            'type' => 'required|max:100',
+            'slug' => 'required|max:100',
+        ]);
+
+        $data = $request->all();
+        if($data['title'] != $movie->title){
+            $data['slug'] = Str::slug($data['title']);
+        }
+        $movie->update($data);
+
+        return redirect()->route('movies.index');
     }
 
     /**
@@ -106,6 +123,7 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        $movie->delate();
+        return redirect()->route('movies.index');
     }
 }
