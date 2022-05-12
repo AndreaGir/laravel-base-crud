@@ -27,6 +27,16 @@
     <input type="text" placeholder="" name="price" value="{{ old('price')}}">
     <h2>Tipo</h2>
     <input type="text" placeholder="" name="type" value="{{ old('type')}}">
+    <div class="">
+        <label for="category">Example select</label>
+        <select class="" id="category" name="category_id">
+          <option value="">-- seleziona categoria --</option>
+          @foreach ($acategories as $category)
+            <option {{$category->id == old('category_id', '') ? 'selected' : '' }} value="{{$category->id}}">{{$category->name}}</option>
+          @endforeach
+          
+        </select>
+      </div>
 
     
         <button> Aggiungi film</button>

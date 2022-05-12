@@ -14,5 +14,10 @@ class Movie extends Model
             'sale_date',
             'price',
             'type',
+            'category_id',
     ];
+
+    public function category() {
+        return $this->belongsTo('App\Category');
+    }
 }

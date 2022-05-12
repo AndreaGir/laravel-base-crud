@@ -11,6 +11,7 @@
     <thead class="indici">
         <th>titolo</th>
         <th>descrizione</th>
+        <th>categorie</th>
         <th>serie</th>
         <th>data</th>
         <th>prezo</th>
@@ -24,6 +25,9 @@
             </td>
             <td class="linee">
                 {{ $movie->description}}
+            </td>
+            <td class="linee">
+                {{ $movie->category ? $movie->category->name : ' - '}}
             </td>
             <td class="linee">
                 {{ $movie->series}}
@@ -41,7 +45,7 @@
                 <a href="{{ route('movies.edit', $movie)}}">
                     <button>modifica</button>
                 </a>
-                <form action="{{ route('movies.destroy', $movie)}}" method="post">
+                <form onsubmit="return confirm('Sei sicuro di voler eliminare il film?') action="{{ route('movies.destroy', $movie)}}" method="POST">
                     @csrf
                     @method('DELETE')
 

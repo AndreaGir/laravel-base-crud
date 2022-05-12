@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Str;
 use App\Movie;
+use App\Category;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -26,7 +27,8 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('movies.create');
+        $categories = Category::all();
+        return view('movies.create', compact('categories'));
     }
 
     /**
@@ -44,6 +46,7 @@ class MovieController extends Controller
             'sale_date' => 'required|max:100',
             'price' => 'required|max:100',
             'type' => 'required|max:100',
+            'category_id' => 'nullable|exists:categories,id'
         ]);
 
         $movie = new Movie();
@@ -127,3 +130,4 @@ class MovieController extends Controller
         return redirect()->route('movies.index');
     }
 }
+
